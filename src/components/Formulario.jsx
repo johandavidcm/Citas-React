@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import uuid from 'uuid/dist/v4';
 
 const Formulario = () => {
 
@@ -33,8 +34,12 @@ const Formulario = () => {
                 actualizarError(true);
                 return;
             }
+        
+        //Eliminar mensaje
+        actualizarError(false);
+        
         //Asignar un ID
-
+        cita.id = uuid();
         //Crear Cita
 
         //Reiniciar Form
@@ -45,7 +50,6 @@ const Formulario = () => {
     return (
         <Fragment>
             <h2>Crear cita</h2>
-
             { 
                 error ?
                     <p className="alerta-error">Todos los campos son obligatorios</p>
@@ -53,7 +57,6 @@ const Formulario = () => {
                     null
             
             }
-
             <form 
                 onSubmit = { submitCita }
             >
