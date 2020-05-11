@@ -17,16 +17,31 @@ const Formulario = () => {
             ...cita,
             [e.target.name] : e.target.value
         });
-    }
+    };
 
     //Extraer los valores
     const {mascota, propietario, fecha, hora, sintomas} = cita;
+
+    //Al enviar el formulario
+    const submitCita = (e) => {
+        e.preventDefault();
+        //Validar
+
+        //Asignar un ID
+
+        //Crear Cita
+
+        //Reiniciar Form
+
+    };
     
 
     return (
         <Fragment>
             <h2>Crear cita</h2>
-            <form>
+            <form 
+                onSubmit = { submitCita }
+            >
                 <label>Nombre Mascotas</label>
                 <input
                     type="text"
@@ -71,7 +86,7 @@ const Formulario = () => {
                     value={sintomas}>
                 </textarea>
                 <button
-                    type="button"
+                    type="submit"
                     className="u-full-width button-primary"
                 >Agregar cita</button>
             </form>
